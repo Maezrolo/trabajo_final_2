@@ -17,8 +17,16 @@
     }
 
     form {
-        background:#e5e5e5;
+        background: #e5e5e5;
         border: 2px solid black;
+    }
+
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
     }
 </style>
 
@@ -32,7 +40,7 @@
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 
                     <!-- inicio del formulario -->
-                    <form class="p-4">
+                    <form action="{{route('login')}}" method="post" class="p-4">
                         <h2 class="fw-bold mb-2 text-uppercase text-center text-primary">Iniciar Sesión</h2>
 
                         <!-- Email input -->
