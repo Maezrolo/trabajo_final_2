@@ -33,6 +33,7 @@
 
 <body>
 
+    <!-- barra de navegacion -->
     <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
         <div class="bg-dark p-4">
             <h5 class="text-body-emphasis h4">Bienvenidos</h5>
