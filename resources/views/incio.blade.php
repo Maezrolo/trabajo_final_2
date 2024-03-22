@@ -89,7 +89,7 @@
         <div class="card-columns">
             <a href="" style="color: black;" >
                 <div class="card text-center" >
-                    <img src="{{ asset('asset/a1.png')}}" class="card-img-top">
+                    <img src="{{ asset('asset/q1.png')}}" class="card-img-top">
                     <div class="card-body">
                         <h1 class="btn btn-primary">Productos</h1>
                     </div>
@@ -100,14 +100,14 @@
                 <div class="card text-center">
                     <img src="{{ asset('asset/a1.png')}}" class="card-img-top">
                     <div class="card-body">
-                        <h1 class="btn btn-primary">Ventas</h1>
+                        <h1 class="btn btn-primary">Vender</h1>
                     </div>
                 </div>
             </a>
 
             <a href="" style="color: black;">
                 <div class="card text-center">
-                    <img src="{{ asset('asset/a1.png')}}" class="card-img-top">
+                    <img src="{{ asset('asset/w1.png')}}" class="card-img-top">
                     <div class="card-body">
                         <h1 class="btn btn-primary">Ventas</h1>
                     </div>
