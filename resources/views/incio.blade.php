@@ -11,6 +11,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
+<style>
+    body{
+        background-color: #c8dce1;
+    }
+    .card-columns {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite que las tarjetas se envuelvan en varias filas si no caben en una sola */
+        gap: 10px;
+        /* Espacio entre las tarjetas */
+    }
+
+    .card-columns {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas si no caben en una sola */
+            gap: 150px; /* Espacio entre las tarjetas */
+        }
+        .card {
+            width: 250px; /* Establece el ancho deseado */
+            height: 350px; /* Establece la altura deseada */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #ccc; /* Borde para las tarjetas */
+            margin: 10px; /* Añade margen entre las tarjetas */
+        }
+        .card img {
+            max-width: 100%; /* Ajusta la imagen al ancho de la tarjeta */
+            height: auto; /* Para mantener la proporción de la imagen */
+        }
+</style>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
@@ -50,7 +83,40 @@
             </div>
         </div>
     </nav>
+    <h1 class="col-12 text-center"> Bienvenidos </h1>
     <main>
+
+        <div class="card-columns">
+            <a href="" style="color: black;" >
+                <div class="card text-center" >
+                    <img src="{{ asset('asset/a1.png')}}" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="btn btn-primary">Productos</h1>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" style="color: black;">
+                <div class="card text-center">
+                    <img src="{{ asset('asset/a1.png')}}" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="btn btn-primary">Ventas</h1>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" style="color: black;">
+                <div class="card text-center">
+                    <img src="{{ asset('asset/a1.png')}}" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="btn btn-primary">Ventas</h1>
+                    </div>
+                </div>
+            </a>
+
+
+
+        </div>
 
     </main>
     <footer>
