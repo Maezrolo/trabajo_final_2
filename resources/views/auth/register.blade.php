@@ -23,9 +23,10 @@
     }
 
     form {
-        background-color: #dbdad9;
-
-        border: 2px solid black;
+        border-radius: 7px;
+        background: #b2f0ba;
+        box-shadow: -25px 25px 50px #344d5d,
+            25px -25px 50px #d0ffff;
     }
 
     .card-body {
@@ -87,7 +88,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-                            <h2 class="fw-bold mb-3 mt-3 text-uppercase text-center text-primary">Regsitro</h2>
+                            <h2 class="fw-bold mb-3 mt-3 text-uppercase text-center text-primary">Registro</h2>
 
                             <div class="row mb-4">
                                 <label id="LM" for="name" class="col-md-4 col-form-label text-md-end label-large">{{ __('Nombre') }}</label>
@@ -159,6 +160,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 </body>
 
