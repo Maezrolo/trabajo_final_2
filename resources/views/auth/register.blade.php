@@ -10,22 +10,53 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="{{ asset('asset/estilo.css')}}"> -->
 </head>
 <style>
     body {
         background: #eae0d4;
+        font-family: "Oswald", sans-serif;
     }
 
     form {
-        background: #e5e5e5;
+        background-color: #dbdad9;
+
         border: 2px solid black;
+    }
+
+    .card-body {
+        background-color: #fff;
+        /* Cambie el código hexadecimal por su color deseado */
+    }
+
+    .separator {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        color: #8B8E98;
+    }
+
+    .separator .line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border: 0;
+        background-color: #c85271;
+    }
+
+    .label-large {
+        font-size: 21px;
     }
 </style>
 
 <body>
-
+    <!-- barra de navegacion -->
     <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
         <div class="bg-dark p-4">
             <h5 class="text-body-emphasis h4">Bienvenidos</h5>
@@ -43,81 +74,91 @@
         </div>
     </nav>
 
-
+    <!-- cuerpo y formulario -->
     <section class="vh-100">
         <div class="container py-5 h-100">
             <div class="row d-flex align-items-center justify-content-center h-100">
                 <div class="col-md-8 col-lg-7 col-xl-6">
                     <img src="{{ asset('asset/1599791579602.png')}}" class="img-fluid" alt="Phone image">
                 </div>
+                <!-- inicio del formulario -->
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 
-                    <!-- inicio del formulario -->
                     <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-                            <h1>Registro</h1>
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <h2 class="fw-bold mb-3 mt-3 text-uppercase text-center text-primary">Regsitro</h2>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <div class="row mb-4">
+                                <label id="LM" for="name" class="col-md-4 col-form-label text-md-end label-large">{{ __('Nombre') }}</label>
 
-                                @error('name')
+                                <div class="col-md-7">
+                                    <input class="form-control form-control-lg" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                    @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <div class="row mb-4">
+                                <label for="email" class="col-md-4 col-form-label text-md-end label-large">{{ __('Correo Electronico') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <div class="col-md-7">
+                                    <input class="form-control form-control-lg" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
+                                    @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <div class="row mb-4">
+                                <label for="password" class="col-md-4 col-form-label text-md-end label-large">{{ __('Contraseña') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <div class="col-md-7">
+                                    <input class="form-control form-control-lg" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                @error('password')
+                                    @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                            <div class="row mb-3 ">
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-end label-large">{{ __('Confimar Contraseña') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <div class="col-md-7">
+                                    <input class="form-control form-control-lg" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                            <div class="row mb-3">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        {{ __('Crear Cuenta') }}
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+
+                            <div class="separator">
+                                <hr class="line">
+                                <span>Or</span>
+                                <hr class="line">
+                            </div>
+
+                            <a href="#">Facebook</a>
+                            <a href="#">Google</a>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 </body>
 
