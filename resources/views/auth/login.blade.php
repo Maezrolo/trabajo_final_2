@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dGs/XnJRf7j2ssYpO4osB5vGY6gkKaCSTBnXiu3UZKrKMx5tgeUL9RuUHRbK8fwnY3vDxv9QQcqmSwq/iBqI9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 
 </head>
 
@@ -144,14 +146,13 @@
 
                             <div class="separator">
                                 <hr class="line">
-                                <span>Or</span>
+                                <span class="material-symbols-outlined">
+                                    filter_list
+                                </span>
                                 <hr class="line">
                             </div>
 
-                            <a href="#">
-                                <i class="fab fa-facebook"></i> Facebook
-                            </a>
-                            <a href="#">Google</a>
+                            <br>
                         </form>
                     </div>
                 </div>
