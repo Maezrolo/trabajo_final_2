@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!-- <link rel="stylesheet" href="{{ asset('asset/estilo.css')}}"> -->
 </head>
@@ -59,11 +60,11 @@
 <body>
     <!-- barra de navegacion -->
     <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-        <div class="bg-dark p-4">
-            <h5 class="text-body-emphasis h4">Bienvenidos</h5>
-            <span class="text-body-secondary">Tanlento Digital.</span>
+        <div class="bg-dark p-3 text-center  ">
+            <h3 class="text-body-emphasis">Bienvenidos</h3>
+            <span class="text-body-secondary h3">Tanlento Digital.</span>
             @if (Route::has('login'))
-            <a href="{{ route('login') }}" class="ml-4 text-sm  text-gray-700 underline">Login</a>
+            <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 underline ">Login</a>
             @endif
         </div>
     </div>
@@ -97,6 +98,20 @@
                                     <input class="form-control form-control-lg" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                     @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <label id="LM" for="username" class="col-md-4 col-form-label text-md-end label-large">{{ __('Usuario') }}</label>
+
+                                <div class="col-md-7">
+                                    <input class="form-control form-control-lg" id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+
+                                    @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -150,12 +165,11 @@
 
                             <div class="separator">
                                 <hr class="line">
-                                <span>Or</span>
+                                <span class="material-symbols-outlined">
+                                    filter_list
+                                </span>
                                 <hr class="line">
                             </div>
-
-                            <a href="#">Facebook</a>
-                            <a href="#">Google</a>
                         </form>
                     </div>
                 </div>
